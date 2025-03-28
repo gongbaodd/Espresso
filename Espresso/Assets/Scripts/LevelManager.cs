@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private Rigidbody2D playerRb;
     private bool isOnFloor = true;
-    private bool isOnBottom = true;
+    private bool isOnBottom = true; 
 
 
     void MoveBackground()
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         var gravityFactor = isOnBottom ? -1f : 1f; // on bottom, point down | on top, point up
 
         RaycastHit2D hit = Physics2D.Raycast(player.position, Vector2.up * gravityFactor, 1f);
+        Debug.DrawRay(player.position, Vector2.up * gravityFactor, Color.red, 0.1f); // Visualize the raycast
         if (hit.collider != null)
         {
             isOnFloor = true;
@@ -52,11 +53,7 @@ public class GameManager : MonoBehaviour
         var gravityFactor = isOnBottom ? -1f : 1f; // on bottom, jump up | on top, jump down
         if (isOnFloor)
         {
-            print("Jumping");
             playerRb.velocity = new Vector2(playerRb.velocity.x, -jumpForce * gravityFactor);
-
-            print("Jumping with gravity factor: " + -jumpForce * gravityFactor);
-            print(isOnBottom);
             isOnFloor = false;
         }
     }
@@ -64,11 +61,11 @@ public class GameManager : MonoBehaviour
     void Reverse()
     {
         isOnFloor = false; // Reset isOnFloor state
+        isOnBottom = !isOnBottom;
 
-        isOnBottom = !isOnBottom; // Toggle the isOnBottom state
         var gravityFactor = isOnBottom ? -1f : 1f; // on bottom, gravity down | on top, gravity up
+        Physics2D.gravity = new Vector2(0, 9.81f * gravityFactor); // Adjust gravity direction
 
-        Physics2D.gravity = new Vector2(0, -9.81f * gravityFactor); // Adjust gravity direction
     }
     
     void Start()
