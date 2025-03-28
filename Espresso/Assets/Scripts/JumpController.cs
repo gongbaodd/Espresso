@@ -1,11 +1,12 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class JumpController : MonoBehaviour
 {
     private GameObject manager;
     private Rigidbody2D playerRb;
 
+    private Animator ani;
     private LevelConfig Config
     {
         get
@@ -25,39 +26,63 @@ public class JumpController : MonoBehaviour
         get { return GroundTest(); }
 
     }
+    private float gravityFactor
+    {
+        get
+        {
+            return IsDown ? -1f : 1f; // on bottom, point down | on top, point up
+        }
+    }
     void Jump()
     {
-        var gravityFactor = IsDown ? -1f : 1f; // on bottom, jump up | on top, jump down
         var jumpForce = Config.jumpForce;
 
         if (isOnFloor)
         {
             playerRb.velocity = new Vector2(playerRb.velocity.x, -jumpForce * gravityFactor);
+            JumpAnimation();
         }
+    }
+
+    void JumpAnimation()
+    {
+        ani.SetBool("jump", true);
+        ani.SetBool("runnin", false);
     }
 
     bool GroundTest()
     {
-        var gravityFactor = IsDown ? -1f : 1f; // on bottom, point down | on top, point up
+        var hitY = 5 * gravityFactor * Vector2.up;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, hitY, 1f);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up * gravityFactor, 0.1f);
-        Debug.DrawRay(transform.position, Vector2.up * gravityFactor, Color.red, 0.1f); // Visualize the raycast
+        print("Raycast hit: " + hit.collider?.name);
 
-        if (hit.collider != null)
-        {
-            return true;
-
-        }
-        else
+        if (hit.collider == null)
         {
             return false;
         }
+
+        if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Ceiling"))
+        {
+            RunAnimation();
+            return true;
+
+        }
+
+        return false;
+    }
+
+    void RunAnimation()
+    {
+        ani.SetBool("jump", false);
+        ani.SetBool("runnin", true);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        ani = GetComponent<Animator>();
         manager = GameObject.Find("Manager");
         if (manager == null)
         {
@@ -70,9 +95,9 @@ public class JumpController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
-            var ani = gameObject.GetComponent<Animator>();
-            ani.SetBool("jump", true);
-            ani.SetBool("runnin", false);
         }
+
+        var hitY = 5 * gravityFactor * Vector2.up;
+        Debug.DrawRay(transform.position, hitY, Color.red);
     }
 }
