@@ -6,26 +6,30 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject background;
-    public float backgroundSpeed = 2f;
-    public Transform player;
+    public GameObject ending;
+    public float runningSpeed = 2f;
+    public GameObject player;
     public float jumpForce = 5f;
     public float dashSpeed = 10f;
 
     private Rigidbody2D playerRb;
     private bool isOnFloor = true;
-    private bool isOnBottom = true; 
+    private bool isOnBottom = true;
 
 
     void MoveBackground()
     {
-        background.transform.position += Vector3.left * backgroundSpeed * Time.deltaTime;
+        background.transform.position += Vector3.left * runningSpeed * Time.deltaTime;
+        ending.transform.position += Vector3.left * runningSpeed * Time.deltaTime;
     }
 
-    void GroundTest() {
+    void GroundTest()
+    {
         var gravityFactor = isOnBottom ? -1f : 1f; // on bottom, point down | on top, point up
 
-        RaycastHit2D hit = Physics2D.Raycast(player.position, Vector2.up * gravityFactor, 1f);
-        Debug.DrawRay(player.position, Vector2.up * gravityFactor, Color.red, 0.1f); // Visualize the raycast
+        RaycastHit2D hit = Physics2D.Raycast(player.transform.position, Vector2.up * gravityFactor, 0.1f);
+        Debug.DrawRay(player.transform.position, Vector2.up * gravityFactor, Color.red, 0.1f); // Visualize the raycast
+
         if (hit.collider != null)
         {
             isOnFloor = true;
@@ -67,7 +71,7 @@ public class GameManager : MonoBehaviour
         Physics2D.gravity = new Vector2(0, 9.81f * gravityFactor); // Adjust gravity direction
 
     }
-    
+
     void Start()
     {
         playerRb = player.GetComponent<Rigidbody2D>();
