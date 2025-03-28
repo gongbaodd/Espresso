@@ -19,8 +19,6 @@ public class GameManager : MonoBehaviour
 
     void MoveBackground()
     {
-        background.transform.position += Vector3.left * runningSpeed * Time.deltaTime;
-        ending.transform.position += Vector3.left * runningSpeed * Time.deltaTime;
     }
 
     void GroundTest()
