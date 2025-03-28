@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2057485531861734089}
   - component: {fileID: 631622318324882012}
+  - component: {fileID: 7444921605567774017}
+  - component: {fileID: 9053273355362681930}
+  - component: {fileID: 4670814175482773704}
   - component: {fileID: 1930745967444587312}
   - component: {fileID: 4796538656127712266}
   - component: {fileID: 6663232049439240818}
@@ -30,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8, y: -2, z: 0}
-  m_LocalScale: {x: -4, y: 4, z: 0}
+  m_LocalScale: {x: -4, y: 6, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,6 +90,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7444921605567774017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307583297403229254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad3976a83948bc45bd2b82b1f0c92bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDown: 1
+--- !u!114 &9053273355362681930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307583297403229254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62b12e0930af2247bc70d5915ec68d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+--- !u!114 &4670814175482773704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307583297403229254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5709ff51b5cbb4fb5a35eb501b78ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &1930745967444587312
 Rigidbody2D:
   serializedVersion: 4
