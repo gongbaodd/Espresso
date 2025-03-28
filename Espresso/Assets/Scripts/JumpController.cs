@@ -44,18 +44,28 @@ public class JumpController : MonoBehaviour
         }
     }
 
+
     void JumpAnimation()
     {
         ani.SetBool("jump", true);
         ani.SetBool("runnin", false);
     }
 
+    void RunAnimation()
+    {
+        ani.SetBool("jump", false);
+        ani.SetBool("runnin", true);
+    }
+
     bool GroundTest()
     {
+        if (transform.position.y > 3f)
+        {
+            //TODO: hit test can not find ceiling, hardcode instead
+            return true;
+        }
         var hitY = 5 * gravityFactor * Vector2.up;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, hitY, 1f);
-
-        print("Raycast hit: " + hit.collider?.name);
 
         if (hit.collider == null)
         {
@@ -64,18 +74,11 @@ public class JumpController : MonoBehaviour
 
         if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Ceiling"))
         {
-            RunAnimation();
             return true;
 
         }
 
         return false;
-    }
-
-    void RunAnimation()
-    {
-        ani.SetBool("jump", false);
-        ani.SetBool("runnin", true);
     }
 
     // Start is called before the first frame update
@@ -97,6 +100,10 @@ public class JumpController : MonoBehaviour
             Jump();
         }
 
+        if (isOnFloor) {
+            RunAnimation();
+        }
+        
         var hitY = 5 * gravityFactor * Vector2.up;
         Debug.DrawRay(transform.position, hitY, Color.red);
     }

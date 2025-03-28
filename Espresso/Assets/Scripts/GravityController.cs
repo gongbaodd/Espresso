@@ -3,6 +3,8 @@ using UnityEngine;
 public class GravityController : MonoBehaviour
 {
     private GameObject manager;
+
+    private SpriteRenderer sprite;
     private bool IsDown {
         get {
             return gameObject.GetComponent<PlayerController>().isDown;
@@ -26,6 +28,8 @@ public class GravityController : MonoBehaviour
         {
             throw new System.Exception("Manager object not found in the scene.");
         }
+
+        sprite = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Reverse()
@@ -34,13 +38,13 @@ public class GravityController : MonoBehaviour
         IsDown = !IsDown;
         var gravityFactor = IsDown ? -1f : 1f; // on bottom, gravity down | on top, gravity up
         Physics2D.gravity = new Vector2(0, Gravity * gravityFactor); // Adjust gravity direction
-
+        sprite.flipY = !IsDown; // Flip sprite based on gravity direction
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             Reverse();
             var ani = gameObject.GetComponent<Animator>();
