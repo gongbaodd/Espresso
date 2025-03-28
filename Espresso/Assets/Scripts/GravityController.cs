@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class gravityController : MonoBehaviour
+public class GravityController : MonoBehaviour
 {
-    private bool isDown {
+    private GameObject manager;
+    private bool IsDown {
         get {
             return gameObject.GetComponent<PlayerController>().isDown;
         }
@@ -11,14 +12,28 @@ public class gravityController : MonoBehaviour
         }
     }
 
-    private float gravity = 9.81f; // Default gravity value
+    private float Gravity {
+        get {
+            return manager.GetComponent<LevelManagerController>().levelConfig.gravity;
+        }
+    }
+
+    void Start()
+    {
+        // Initialize gravity if needed
+        manager = GameObject.Find("Manager");
+        if (manager == null)
+        {
+            throw new System.Exception("Manager object not found in the scene.");
+        }
+    }
 
     void Reverse()
     {
         // isOnFloor = false; // Reset isOnFloor state
-        isDown = !isDown;
-        var gravityFactor = isDown ? -1f : 1f; // on bottom, gravity down | on top, gravity up
-        Physics2D.gravity = new Vector2(0, gravity * gravityFactor); // Adjust gravity direction
+        IsDown = !IsDown;
+        var gravityFactor = IsDown ? -1f : 1f; // on bottom, gravity down | on top, gravity up
+        Physics2D.gravity = new Vector2(0, Gravity * gravityFactor); // Adjust gravity direction
 
     }
 

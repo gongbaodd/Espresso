@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class MoveBackController : MonoBehaviour
 {
-    [SerializeField] GameObject manager;
+    private GameObject manager;
+    private LevelConfig Config {
+        get
+        {
+            return manager.GetComponent<LevelManagerController>().levelConfig;
+        }
+    }
 
     private float runningSpeed;
-    void OnEnable()
+    void Start()
     {
-        runningSpeed = manager.GetComponent<GameManager>().runningSpeed;
+        manager = GameObject.Find("Manager");
+        if (manager == null)
+        {
+            throw new System.Exception("Manager object not found in the scene.");
+        }
+
+        runningSpeed = Config.runningSpeed;
     }
     void Update()
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(JumpController), typeof(gravityController))]
+[RequireComponent(typeof(JumpController), typeof(GravityController))]
 public class PlayerController : MonoBehaviour
 {
     [HideInInspector]
