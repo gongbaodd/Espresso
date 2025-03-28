@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class GameManager : MonoBehaviour
 {
     public GameObject background;
@@ -8,23 +10,11 @@ public class GameManager : MonoBehaviour
     public Transform player;
     public float jumpForce = 5f;
     public float dashSpeed = 10f;
-    public float dashCooldown = 1f;
 
     private Rigidbody2D playerRb;
-    private bool canDash = true;
     private bool isOnFloor = true;
+    private bool isOnBottom = true; 
 
-    void Start()
-    {
-        playerRb = player.GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
-        MoveBackground();
-        HandleInput();
-        GroundTest();
-    }
 
     void MoveBackground()
     {
@@ -32,7 +22,10 @@ public class GameManager : MonoBehaviour
     }
 
     void GroundTest() {
-        RaycastHit2D hit = Physics2D.Raycast(player.position, Vector2.down, 1f);
+        var gravityFactor = isOnBottom ? -1f : 1f; // on bottom, point down | on top, point up
+
+        RaycastHit2D hit = Physics2D.Raycast(player.position, Vector2.up * gravityFactor, 1f);
+        Debug.DrawRay(player.position, Vector2.up * gravityFactor, Color.red, 0.1f); // Visualize the raycast
         if (hit.collider != null)
         {
             isOnFloor = true;
@@ -49,51 +42,41 @@ public class GameManager : MonoBehaviour
         {
             Jump();
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Dash();
+            Reverse();
         }
     }
 
     void Jump()
     {
+        var gravityFactor = isOnBottom ? -1f : 1f; // on bottom, jump up | on top, jump down
         if (isOnFloor)
         {
-            playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
+            playerRb.velocity = new Vector2(playerRb.velocity.x, -jumpForce * gravityFactor);
             isOnFloor = false;
         }
     }
 
-    void Dash()
+    void Reverse()
     {
-        canDash = false;
-        isOnFloor = !isOnFloor; // Toggle between floor and ceiling
-        float targetY = isOnFloor ? -3f : 3f; // Set floor and ceiling height
+        isOnFloor = false; // Reset isOnFloor state
+        isOnBottom = !isOnBottom;
 
-        Physics2D.gravity = new Vector2(0, 9.81f); 
-        StartCoroutine(DashMovement(targetY));
-        StartCoroutine(DashCooldown());
+        var gravityFactor = isOnBottom ? -1f : 1f; // on bottom, gravity down | on top, gravity up
+        Physics2D.gravity = new Vector2(0, 9.81f * gravityFactor); // Adjust gravity direction
+
+    }
+    
+    void Start()
+    {
+        playerRb = player.GetComponent<Rigidbody2D>();
     }
 
-    IEnumerator DashMovement(float targetY)
+    void Update()
     {
-        float elapsedTime = 0f;
-        Vector2 startPos = player.position;
-        Vector2 targetPos = new Vector2(startPos.x, targetY);
-
-        while (elapsedTime < 0.2f)
-        {
-            player.position = Vector2.Lerp(startPos, targetPos, (elapsedTime / 0.2f));
-            elapsedTime += Time.deltaTime * dashSpeed;
-            yield return null;
-        }
-
-        player.position = targetPos;
-    }
-
-    IEnumerator DashCooldown()
-    {
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
+        MoveBackground();
+        HandleInput();
+        GroundTest();
     }
 }
