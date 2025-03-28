@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         if (hit.collider != null)
         {
             isOnFloor = true;
+        
         }
         else
         {
@@ -42,13 +43,20 @@ public class GameManager : MonoBehaviour
 
     void HandleInput()
     {
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
+            var ani = player.GetComponent<Animator>();
+            ani.SetBool("jump", true);
+            ani.SetBool("runnin", false);
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Reverse();
+            var ani = player.GetComponent<Animator>();
+            ani.SetBool("jump", true);
+            ani.SetBool("runnin", false);
         }
     }
 
@@ -75,6 +83,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerRb = player.GetComponent<Rigidbody2D>();
+        
     }
 
     void Update()
