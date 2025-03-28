@@ -4,9 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelEndController : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-       print(other.gameObject.name);
-        SceneManager.LoadScene("LevelEnd");
+        print("Collision detected with: " + collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("LevelEnd");
+        }
     }
 }

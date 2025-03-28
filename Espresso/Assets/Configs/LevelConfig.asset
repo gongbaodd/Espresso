@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfdc48ea62808f64eac0127372fbe35e, type: 3}
   m_Name: LevelConfig
   m_EditorClassIdentifier: 
-  runningSpeed: 20
+  runningSpeed: 2
   jumpForce: 5
   gravity: 9.81
