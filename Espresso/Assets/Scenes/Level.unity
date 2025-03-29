@@ -692,6 +692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4077938017872627115, guid: 1e551b59fa2cc3e48a94af8126ed3ed0, type: 3}
+      propertyPath: m_TagString
+      value: Manager
+      objectReference: {fileID: 0}
     - target: {fileID: 5670950168324777626, guid: 1e551b59fa2cc3e48a94af8126ed3ed0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
