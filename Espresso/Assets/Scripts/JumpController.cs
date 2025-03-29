@@ -20,12 +20,12 @@ public class JumpController : MonoBehaviour
             return gameObject.GetComponent<PlayerController>().isDown;
         }
     }
-    public bool isOnFloor
+    public bool IsOnFloor
     {
         get { return GroundTest(); }
 
     }
-    private float gravityFactor
+    private float GravityFactor
     {
         get
         {
@@ -53,7 +53,7 @@ public class JumpController : MonoBehaviour
             //TODO: hit test can not find ceiling, hardcode instead
             return true;
         }
-        var hitY = 5 * gravityFactor * Vector2.up;
+        var hitY = 5 * GravityFactor * Vector2.up;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, hitY, 1f);
 
         if (hit.collider == null)
@@ -88,13 +88,12 @@ public class JumpController : MonoBehaviour
             Jump();
         }
 
-        if (isOnFloor) 
-        {
+        if (IsOnFloor) {
             var playerController = gameObject.GetComponent<PlayerController>();
             playerController.RunAnimation();
         }
         
-        var hitY = 5 * gravityFactor * Vector2.up;
+        var hitY = 5 * GravityFactor * Vector2.up;
         Debug.DrawRay(transform.position, hitY, Color.red);
     }
 }

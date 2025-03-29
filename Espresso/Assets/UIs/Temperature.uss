@@ -1,0 +1,25 @@
+.temperature {
+    flex-grow: 1;
+    flex-direction: row;
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.progressbar {
+    rotate: -90deg;
+    translate: -350px -15px;
+    transform-origin: center;
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.metor {
+    -unity-font-style: bold;
+    font-size: 50px;
+    -unity-text-align: upper-right;
+}
