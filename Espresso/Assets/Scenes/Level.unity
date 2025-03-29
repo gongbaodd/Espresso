@@ -509,21 +509,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1527853538}
     m_Modifications:
-    - target: {fileID: 3665435315660760646, guid: 4f41ff45c6a25f643a31f84fd66db62d, type: 3}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3665435315660760646, guid: 4f41ff45c6a25f643a31f84fd66db62d, type: 3}
-      propertyPath: levelConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: 393720d418e6e8c42b1685c64185f6b1, type: 2}
     - target: {fileID: 4431863471610275146, guid: 4f41ff45c6a25f643a31f84fd66db62d, type: 3}
       propertyPath: m_Name
       value: Background
-      objectReference: {fileID: 0}
-    - target: {fileID: 5423690428803042274, guid: 4f41ff45c6a25f643a31f84fd66db62d, type: 3}
-      propertyPath: m_Size.x
-      value: 60.17901
       objectReference: {fileID: 0}
     - target: {fileID: 7298782356697221619, guid: 4f41ff45c6a25f643a31f84fd66db62d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -641,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6070247375613475938, guid: 81dc724155fa39642966c905a971bfbf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1827726
+      value: 3.8699
       objectReference: {fileID: 0}
     - target: {fileID: 6070247375613475938, guid: 81dc724155fa39642966c905a971bfbf, type: 3}
       propertyPath: m_LocalPosition.z
