@@ -6,6 +6,7 @@ public enum CollectableType
     Sugar,
     Milk,
     Salt,
+    Mucus,
 }
 
 [CreateAssetMenu(fileName = "CollectableConfig", menuName = "Configs/CollectableConfig", order = 1)]

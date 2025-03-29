@@ -10,6 +10,7 @@ public class CollectableController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             OnCollectableTriggered?.Invoke(config.collectableType);
+            Destroy(gameObject);
         }
     }
 }
