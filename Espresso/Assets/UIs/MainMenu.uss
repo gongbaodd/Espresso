@@ -1,0 +1,10 @@
+.panel {
+    flex-grow: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 900px;
+    height: 100%;
+    padding: 48px;
+    gap: 16px;
+}
