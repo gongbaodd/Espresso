@@ -6,13 +6,13 @@
         </ui:VisualElement>
         <ui:VisualElement name="Orders" style="flex-grow: 1; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; flex-direction: row;">
             <ui:VisualElement name="Level1" class="orderArea">
-                <ui:Button text="3 level hot" parse-escape-sequences="true" display-tooltip-when-elided="true" class="order" />
+                <ui:Button text="3 level hot" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Level1Button" class="order" />
             </ui:VisualElement>
             <ui:VisualElement name="Level2" class="orderArea" style="flex-grow: 1;">
-                <ui:Button text="2 level hot&#10;3 sugar" parse-escape-sequences="true" display-tooltip-when-elided="true" class="order" />
+                <ui:Button text="2 level hot&#10;3 sugar" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Level2Button" class="order" />
             </ui:VisualElement>
             <ui:VisualElement name="Level3" class="orderArea" style="flex-grow: 1;">
-                <ui:Button text="4 level hot&#10;2 sugar&#10;1 milk" parse-escape-sequences="true" display-tooltip-when-elided="true" class="order" />
+                <ui:Button text="4 level hot&#10;2 sugar&#10;1 milk" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Level3Button" class="order" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Buttons" class="buttons" />

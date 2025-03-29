@@ -16,7 +16,7 @@ public class MainMenuController : MonoBehaviour
 
         newGameButton.RegisterCallback<ClickEvent>(ev =>
         {
-            SceneManager.LoadScene("Level", LoadSceneMode.Single);
+            SceneManager.LoadScene("LevelMenu", LoadSceneMode.Single);
         });
     }
 }
