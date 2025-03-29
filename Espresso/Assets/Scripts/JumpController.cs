@@ -6,6 +6,7 @@ public class JumpController : MonoBehaviour
 {
     private GameObject manager;
     private Rigidbody2D playerRb;
+    public Audio_Manager audioManager;
 
     private LevelConfig Config
     {
@@ -43,7 +44,6 @@ public class JumpController : MonoBehaviour
         {
             playerRb.velocity = new Vector2(playerRb.velocity.x, -jumpForce * GravityFactor);
             playerController.hopAnimation();
-
         }
     }
 
@@ -78,6 +78,8 @@ public class JumpController : MonoBehaviour
         {
             throw new System.Exception("Manager object not found in the scene.");
         }
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio_Manager>();
     }
 
     void Update()
@@ -90,6 +92,7 @@ public class JumpController : MonoBehaviour
         if (IsOnFloor) {
             var playerController = gameObject.GetComponent<PlayerController>();
             playerController.RunAnimation();
+            
         }
     }
 }

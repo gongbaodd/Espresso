@@ -4,6 +4,7 @@ using UnityEngine;
 public class GravityController : MonoBehaviour
 {
     private GameObject manager;
+    public Audio_Manager audioManager;
 
     private SpriteRenderer sprite;
     private bool IsDown
@@ -44,6 +45,8 @@ public class GravityController : MonoBehaviour
         }
 
         sprite = gameObject.GetComponent<SpriteRenderer>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio_Manager>();
+
     }
 
     void Reverse()
@@ -55,7 +58,7 @@ public class GravityController : MonoBehaviour
 
         var playerController = gameObject.GetComponent<PlayerController>();
         // TODO: Jump Animation did not triggered when falling
-        playerController.JumpAnimation(); // Trigger jump animation
+        playerController.JumpAnimation();// Trigger jump animation
 
     }
 
