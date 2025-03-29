@@ -639,7 +639,7 @@ PrefabInstance:
     - target: {fileID: 3665435315660760646, guid: 4f41ff45c6a25f643a31f84fd66db62d, type: 3}
       propertyPath: levelConfig
       value: 
-      objectReference: {fileID: 11400000, guid: 393720d418e6e8c42b1685c64185f6b1, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4431863471610275146, guid: 4f41ff45c6a25f643a31f84fd66db62d, type: 3}
       propertyPath: m_Name
       value: Background
@@ -937,6 +937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4077938017872627115, guid: 1e551b59fa2cc3e48a94af8126ed3ed0, type: 3}
+      propertyPath: m_TagString
+      value: Manager
+      objectReference: {fileID: 0}
     - target: {fileID: 5670950168324777626, guid: 1e551b59fa2cc3e48a94af8126ed3ed0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -977,6 +981,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6060231251355870595, guid: 1e551b59fa2cc3e48a94af8126ed3ed0, type: 3}
+      propertyPath: levelConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 393720d418e6e8c42b1685c64185f6b1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
