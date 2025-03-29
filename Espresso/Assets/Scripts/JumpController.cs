@@ -38,9 +38,9 @@ public class JumpController : MonoBehaviour
         var playerController = gameObject.GetComponent<PlayerController>();
 
 
-        if (isOnFloor)
+        if (IsOnFloor)
         {
-            playerRb.velocity = new Vector2(playerRb.velocity.x, -jumpForce * gravityFactor);
+            playerRb.velocity = new Vector2(playerRb.velocity.x, -jumpForce * GravityFactor);
             playerController.hopAnimation();
 
         }
