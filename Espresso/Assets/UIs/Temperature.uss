@@ -21,5 +21,36 @@
 .metor {
     -unity-font-style: bold;
     font-size: 50px;
-    -unity-text-align: upper-right;
+    -unity-text-align: upper-center;
+    -unity-text-outline-color: rgba(255, 255, 255, 0);
+    text-shadow: 100px 100px 100px rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0.97);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    width: 75px;
+    height: 75px;
+}
+
+.5 {
+    -unity-text-outline-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 111, 0, 0.84);
+}
+
+.4 {
+    background-color: rgba(255, 225, 121, 0.89);
+}
+
+.3 {
+    background-color: rgb(233, 255, 180);
+}
+
+.2 {
+    -unity-background-image-tint-color: rgb(93, 253, 255);
+    background-color: rgb(149, 253, 236);
+}
+
+.1 {
+    background-color: rgb(79, 53, 229);
 }

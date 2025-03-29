@@ -3,19 +3,19 @@
     <ui:VisualElement name="Panel" class="temperature">
         <ui:VisualElement name="Meters" style="flex-grow: 1;">
             <ui:VisualElement name="4" style="flex-grow: 1;">
-                <ui:Label tabindex="-1" text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor" />
+                <ui:Label tabindex="-1" text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor 5" />
             </ui:VisualElement>
             <ui:VisualElement name="3" style="flex-grow: 1;">
-                <ui:Label tabindex="-1" text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor" />
+                <ui:Label tabindex="-1" text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor 4" />
             </ui:VisualElement>
             <ui:VisualElement name="2" style="flex-grow: 1;">
-                <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor" />
+                <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor 3" />
             </ui:VisualElement>
             <ui:VisualElement name="1" style="flex-grow: 1;">
-                <ui:Label tabindex="-1" text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="metor" />
+                <ui:Label tabindex="-1" text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="metor 2" />
             </ui:VisualElement>
             <ui:VisualElement name="0" style="flex-grow: 1;">
-                <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor" />
+                <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor 1" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Graphic" style="flex-grow: 1;">
