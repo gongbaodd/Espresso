@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public bool isDown = true;
     public event System.Action<bool> OnGravityChanged;
     private Animator ani;
+    public Audio_Manager audioManager;
 
     public void JumpAnimation()
     {
@@ -15,11 +16,21 @@ public class PlayerController : MonoBehaviour
         ani.SetBool("hop", false);
     }
 
+    public void JumpSound()
+    {
+        audioManager.PlaySFX(audioManager.espresso_jump);
+    }
+
     public void RunAnimation()
     {
         ani.SetBool("jump", false);
         ani.SetBool("runnin", true);
         ani.SetBool("hop", false);
+    }
+
+    public void RunSound()
+    {
+        audioManager.PlaySFX(audioManager.espresso_runReverse);
     }
 
     public void hopAnimation()
@@ -33,5 +44,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         ani = gameObject.GetComponent<Animator>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Audio_Manager>();
+
     }
 }
