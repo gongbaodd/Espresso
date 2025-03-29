@@ -15,3 +15,4 @@ MonoBehaviour:
   runningSpeed: 2
   jumpForce: 5
   gravity: 9.81
+  temperatureUpdateInterval: 0.5

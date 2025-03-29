@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Timeline;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class JumpController : MonoBehaviour
@@ -48,13 +49,11 @@ public class JumpController : MonoBehaviour
 
     bool GroundTest()
     {
-        if (transform.position.y > 3f)
-        {
-            //TODO: hit test can not find ceiling, hardcode instead
-            return true;
-        }
+
         var hitY = 5 * GravityFactor * Vector2.up;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, hitY, 1f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, hitY, 5f);
+        Debug.DrawRay(transform.position, hitY, Color.red);
+
 
         if (hit.collider == null)
         {
@@ -92,8 +91,5 @@ public class JumpController : MonoBehaviour
             var playerController = gameObject.GetComponent<PlayerController>();
             playerController.RunAnimation();
         }
-        
-        var hitY = 5 * GravityFactor * Vector2.up;
-        Debug.DrawRay(transform.position, hitY, Color.red);
     }
 }

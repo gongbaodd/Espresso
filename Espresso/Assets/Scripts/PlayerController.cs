@@ -4,7 +4,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [HideInInspector]
-    public bool isDown = true; // is on bottom
+    public bool isDown = true;
+    public event System.Action<bool> OnGravityChanged;
     private Animator ani;
 
     public void JumpAnimation()

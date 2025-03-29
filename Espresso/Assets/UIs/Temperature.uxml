@@ -19,7 +19,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Graphic" style="flex-grow: 1;">
-            <ui:ProgressBar value="20" picking-mode="Ignore" name="ProgressBar" class="progressbar" />
+            <ui:ProgressBar value="50" picking-mode="Ignore" name="ProgressBar" class="progressbar" style="width: 700px; translate: -350px -15px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
