@@ -1,0 +1,29 @@
+.title {
+    flex-grow: 0;
+    height: 100px;
+    -unity-text-align: upper-center;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel {
+    flex-grow: 1;
+    background-color: rgb(228, 166, 114);
+}
+
+.buttons {
+    flex-grow: 0;
+    height: 200px;
+}
+
+.order {
+    flex-grow: 1;
+}
+
+.orderArea {
+    flex-grow: 1;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
