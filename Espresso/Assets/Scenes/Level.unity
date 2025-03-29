@@ -610,6 +610,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Temperature UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1832290252627611974, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

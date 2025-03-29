@@ -1,0 +1,13 @@
+.orders {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url("project://database/Assets/Sprites/pixil-frame-0%20(15).png?fileID=21300000&guid=e837842aeab85c24f97c46851eed04ab&type=3#pixil-frame-0 (15)");
+    -unity-slice-left: 20;
+    -unity-slice-top: 20;
+    -unity-slice-right: 20;
+    -unity-slice-bottom: 20;
+}

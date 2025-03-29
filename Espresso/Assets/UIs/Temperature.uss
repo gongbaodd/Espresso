@@ -33,24 +33,23 @@
     height: 75px;
 }
 
-.5 {
+.five {
     -unity-text-outline-color: rgba(255, 255, 255, 0);
     background-color: rgba(255, 111, 0, 0.84);
 }
 
-.4 {
+.four {
     background-color: rgba(255, 225, 121, 0.89);
 }
 
-.3 {
+.three {
     background-color: rgb(233, 255, 180);
 }
 
-.2 {
-    -unity-background-image-tint-color: rgb(93, 253, 255);
+.two {
     background-color: rgb(149, 253, 236);
 }
 
-.1 {
+.one {
     background-color: rgb(79, 53, 229);
 }

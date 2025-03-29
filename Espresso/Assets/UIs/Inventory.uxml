@@ -1,3 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="Order" style="flex-grow: 1;" />
+    <Style src="project://database/Assets/UIs/Inventory.uss?fileID=7433441132597879392&amp;guid=644f5d527ca615f48a2f2d608497e024&amp;type=3#Inventory" />
+    <ui:VisualElement name="Order" class="orders" style="left: -90px; top: -75px; background-color: rgba(0, 0, 0, 0);" />
 </ui:UXML>
