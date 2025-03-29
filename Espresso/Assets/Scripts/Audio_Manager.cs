@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Audio_Manager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Audio Source")]
+    [SerializeField] AudioSource musicsource;
+    [SerializeField] AudioSource SFXsource;
+
+    [Header("Audio Clip")]
+    public AudioClip espresso_theme1;
+    public AudioClip espresso_run;
+    public AudioClip espresso_jump;
+    public AudioClip espresso_runReverse;
+
+
+    private void Start()
     {
-        
+        musicsource.clip = espresso_theme1;
+        musicsource.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void PlaySFX(AudioClip clip)
     {
-        
+        SFXsource.PlayOneShot(clip);
     }
+
 }
