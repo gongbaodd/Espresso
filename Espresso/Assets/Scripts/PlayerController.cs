@@ -11,13 +11,23 @@ public class PlayerController : MonoBehaviour
     {
         ani.SetBool("jump", true);
         ani.SetBool("runnin", false);
+        ani.SetBool("hop", false);
     }
 
     public void RunAnimation()
     {
         ani.SetBool("jump", false);
         ani.SetBool("runnin", true);
+        ani.SetBool("hop", false);
     }
+
+    public void hopAnimation()
+    {
+        ani.SetBool("hop", true);
+        ani.SetBool("runnin", false);
+        ani.SetBool("jump", false);
+    }
+    
 
     void Start()
     {
