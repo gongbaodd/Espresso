@@ -6,7 +6,6 @@ public class JumpController : MonoBehaviour
     private GameObject manager;
     private Rigidbody2D playerRb;
 
-    private Animator ani;
     private LevelConfig Config
     {
         get
@@ -21,7 +20,7 @@ public class JumpController : MonoBehaviour
             return gameObject.GetComponent<PlayerController>().isDown;
         }
     }
-    private bool isOnFloor
+    public bool isOnFloor
     {
         get { return GroundTest(); }
 
@@ -36,25 +35,13 @@ public class JumpController : MonoBehaviour
     void Jump()
     {
         var jumpForce = Config.jumpForce;
+        var playerController = gameObject.GetComponent<PlayerController>();
 
         if (isOnFloor)
         {
             playerRb.velocity = new Vector2(playerRb.velocity.x, -jumpForce * gravityFactor);
-            JumpAnimation();
+            playerController.JumpAnimation();
         }
-    }
-
-
-    void JumpAnimation()
-    {
-        ani.SetBool("jump", true);
-        ani.SetBool("runnin", false);
-    }
-
-    void RunAnimation()
-    {
-        ani.SetBool("jump", false);
-        ani.SetBool("runnin", true);
     }
 
     bool GroundTest()
@@ -85,7 +72,6 @@ public class JumpController : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
-        ani = GetComponent<Animator>();
         manager = GameObject.Find("Manager");
         if (manager == null)
         {
@@ -101,7 +87,8 @@ public class JumpController : MonoBehaviour
         }
 
         if (isOnFloor) {
-            RunAnimation();
+            var playerController = gameObject.GetComponent<PlayerController>();
+            playerController.RunAnimation();
         }
         
         var hitY = 5 * gravityFactor * Vector2.up;
