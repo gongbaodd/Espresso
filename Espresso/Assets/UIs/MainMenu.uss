@@ -8,3 +8,12 @@
     padding: 48px;
     gap: 16px;
 }
+
+.button {
+    flex-grow: 1;
+    justify-content: center;
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+}
