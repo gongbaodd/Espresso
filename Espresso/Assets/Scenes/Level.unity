@@ -264,54 +264,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5670950168324777626, guid: 1e551b59fa2cc3e48a94af8126ed3ed0, type: 3}
   m_PrefabInstance: {fileID: 8230606175102490717}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &636573564
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 636573566}
-  - component: {fileID: 636573565}
-  m_Layer: 5
-  m_Name: Temperature UI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &636573565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636573564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 676022590d10dc74f8c25cd9df6a83a0, type: 2}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 9002a0171da3ea842bb6e2c7b7987486, type: 3}
-  m_SortingOrder: 0
---- !u!4 &636573566
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636573564}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &843211908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6738667622396592786, guid: cd021292be85a29498346aa2118dadb8, type: 3}
@@ -553,6 +505,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f41ff45c6a25f643a31f84fd66db62d, type: 3}
+--- !u!1001 &2695989130687746385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1461077269803249225, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461077269803249225, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461077269803249225, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461077269803249225, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461077269803249225, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461077269803249225, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461077269803249225, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461077269803249225, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461077269803249225, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461077269803249225, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832290252627611974, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
+      propertyPath: m_Name
+      value: Temperature UI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ddd8f88c31db1b4fb0e487b2a6ae92c, type: 3}
 --- !u!1001 &2717740751439522954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -730,4 +739,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 316427977}
   - {fileID: 1527853538}
-  - {fileID: 636573566}
+  - {fileID: 2695989130687746385}
