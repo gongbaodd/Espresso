@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIs/Temperature.uss?fileID=7433441132597879392&amp;guid=b3330e0a979f178419052b24abfedde1&amp;type=3#Temperature" />
+    <ui:VisualElement name="Panel" class="temperature">
+        <ui:VisualElement name="Meters" style="flex-grow: 1;">
+            <ui:VisualElement name="4" style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor" />
+            </ui:VisualElement>
+            <ui:VisualElement name="3" style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor" />
+            </ui:VisualElement>
+            <ui:VisualElement name="2" style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor" />
+            </ui:VisualElement>
+            <ui:VisualElement name="1" style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="metor" />
+            </ui:VisualElement>
+            <ui:VisualElement name="0" style="flex-grow: 1;">
+                <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" class="metor" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Graphic" style="flex-grow: 1;">
+            <ui:ProgressBar value="20" picking-mode="Ignore" name="ProgressBar" class="progressbar" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level.unity
     guid: f851369c97c668148af335f227493030
   - enabled: 1
+    path: Assets/Scenes/Level_with_stuff.unity
+    guid: 705c567b6a907e2459a2b3d8ed4ca15c
+  - enabled: 1
     path: Assets/Scenes/LevelEnd.unity
     guid: 3b36dcf9b80a50f4baaf81c7bf03f6dd
   m_configObjects: {}
