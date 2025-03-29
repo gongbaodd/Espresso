@@ -30,7 +30,7 @@ public class GravityController : MonoBehaviour
     {
         get
         {
-            return gameObject.GetComponent<JumpController>().isOnFloor;
+            return gameObject.GetComponent<JumpController>().IsOnFloor;
         }
     }
 
