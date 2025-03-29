@@ -193,6 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1073823996}
   - component: {fileID: 1073823999}
+  - component: {fileID: 1073824000}
   - component: {fileID: 1073823998}
   - component: {fileID: 1073823997}
   m_Layer: 5
@@ -247,7 +248,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: ./StreamingAssets/Espresso_Opening_PixelStyle_16-9.mp4
+  m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -292,6 +293,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073823995}
   m_CullTransparentMesh: 1
+--- !u!114 &1073824000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073823995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edfafe1d55a2c594b916131626b8f3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoName: Espresso_Opening_PixelStyle_16-9.mp4
 --- !u!1 &1270164236
 GameObject:
   m_ObjectHideFlags: 0
